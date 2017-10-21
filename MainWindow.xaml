@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectPI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Bookmaster3000™" Height="465" Width="640" FontFamily="Tahoma" BorderThickness="0,0,0,0">
+    <Grid Width="640" Height="465">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="67*"/>
+        </Grid.ColumnDefinitions>
+        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="640" Background="White" BorderBrush="Black" Grid.ColumnSpan="3"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="410" Stroke="Black" VerticalAlignment="Top" Width="200" Margin="0,20,0,0"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="200" Stroke="Black" VerticalAlignment="Top" Width="430" Margin="200,20,0,0" Grid.ColumnSpan="3"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="210" Stroke="Black" VerticalAlignment="Top" Width="430" Margin="200,220,0,0" Grid.ColumnSpan="3"/>
+        <TextBox HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,164,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,200,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,238,0,0"/>
+        <Label Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,164,0,0" Height="25"/>
+        <Label Content="Author" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,200,0,0" Height="25"/>
+        <Label Content="Subject" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,238,0,0" Height="25"/>
+        <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="59,277,0,0" Height="25" Background="White"/>
+
     </Grid>
 </Window>
