@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProjectPI
 {
     /// <summary>
-    /// Логика взаимодействия для ReportsWindow.xaml
+    /// Логика взаимодействия для Reports.xaml
     /// </summary>
-    public partial class ReportsWindow : Page
+    public partial class Reports : Window
     {
-        public ReportsWindow()
+        public Reports()
         {
             InitializeComponent();
         }

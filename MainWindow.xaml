@@ -21,7 +21,7 @@
         </Menu>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="405" Stroke="Black" VerticalAlignment="Top" Width="200" Margin="0,25,0,0"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="195" Stroke="Black" VerticalAlignment="Top" Width="430" Margin="200,25,0,0"/>
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="210" Stroke="Black" VerticalAlignment="Top" Width="430" Margin="200,221,0,0"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="210" Stroke="Black" VerticalAlignment="Top" Width="430" Margin="200,220,0,0"/>
         <TextBox Text="1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Margin="276,190,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,200,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,238,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
