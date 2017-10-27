@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectPI"
         mc:Ignorable="d"
-        Title="Reports" Height="300" Width="300">
-    <Grid>
+        Title="Bookmaster3000™ - Reports" Height="465" Width="640" FontFamily="Tahoma" BorderThickness="0,0,0,0">
+    <Grid Width="640" Height="465">
+        <Label Content="Reports" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" RenderTransformOrigin="1,0.667" Height="30" FontSize="16"/>
+        <Button Content="Export" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="480,10,0,0" Height="25" Background="White"/>
+        <TabControl HorizontalAlignment="Left" Height="370" Margin="10,45,0,0" VerticalAlignment="Top" Width="610">
+            <TabItem Header="Reminders">
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem Header="Book history">
+                <Grid Background="White"/>
+                
+            </TabItem>
+            
+        </TabControl>
         
+
     </Grid>
 </Window>
