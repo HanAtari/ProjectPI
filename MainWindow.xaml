@@ -29,19 +29,19 @@
         <Label Content="Author" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,200,0,0" Height="25"/>
         <Label Content="Subject" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,238,0,0" Height="25"/>
         <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="59,277,0,0" Height="25" Background="White"/>
-        
-        <DataGrid HorizontalAlignment="Left" Margin="200,25,0,0" Height="159" VerticalAlignment="Top" Width="430"/>
+
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Margin="200,25,0,0" Height="159" VerticalAlignment="Top" Width="430"/>
         
         <Label Content="Page" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205,190,0,0" RenderTransformOrigin="1,0.667" Height="31"/>
         <Image Source="Logo.jpg" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="200" Margin="10,59,0,0"/>
         <Button x:Name="pagGrL" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Margin="246,190,0,0" Height="25" Background="White"/>
         <Button x:Name="pagGrR" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Margin="314,190,0,0" Height="25" Background="White"/>
-        <Label Content="of 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="344,189,0,0" RenderTransformOrigin="1,0.667" Height="31"/>
+        <Label x:Name="pagCount" Content="of 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="344,189,0,0" RenderTransformOrigin="1,0.667" Height="31"/>
         <TextBox x:Name="tbTitle" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,164,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="labBookCount" Content="0 Books found" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="528,190,0,0" RenderTransformOrigin="1,0.667" Height="25" HorizontalContentAlignment="Right"/>
         <Label x:Name="labTitle" Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,229,0,0" RenderTransformOrigin="1,0.667" Height="26" FontSize="16"/>
         <Label x:Name="labSubTitle"  Content="Subtitle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,244,0,0" RenderTransformOrigin="1,0.667" Height="25" FontSize="14"/>
-        <Label x:Name="labAuth" Content="by Author" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,269,0,0" RenderTransformOrigin="1,0.667" Height="28" FontSize="14"/>
+        <Label x:Name="labAuth" Content="by Author"  Foreground="blue"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,269,0,0" RenderTransformOrigin="1,0.667" Height="28" FontSize="14"/>
         <Label x:Name="labFP"  Content="first published:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,285,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
         <Label Content="Description" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,313,0,0" RenderTransformOrigin="1,0.667" Height="25" FontWeight="Bold"/>
         <Label Content="Subjects" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,363,0,0" RenderTransformOrigin="1,0.667" Height="25" FontWeight="Bold"/>
