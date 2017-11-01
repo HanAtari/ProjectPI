@@ -34,8 +34,12 @@
         
         <Label Content="Page" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205,190,0,0" RenderTransformOrigin="1,0.667" Height="31"/>
         <Image Source="Logo.jpg" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="200" Margin="10,59,0,0"/>
-        <Button x:Name="pagGrL" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Margin="246,190,0,0" Height="25" Background="White"/>
-        <Button x:Name="pagGrR" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Margin="314,190,0,0" Height="25" Background="White"/>
+        <Button x:Name="pagGrL" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Margin="246,190,0,0" Height="25">
+            <Image Source="left.png"/>
+        </Button>
+        <Button x:Name="pagGrR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Margin="314,190,0,0" Height="25" Background="White">
+            <Image Source="right.png"/>
+        </Button>
         <Label x:Name="pagCount" Content="of 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="344,189,0,0" RenderTransformOrigin="1,0.667" Height="31"/>
         <TextBox x:Name="tbTitle" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,164,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="labBookCount" Content="0 Books found" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="528,190,0,0" RenderTransformOrigin="1,0.667" Height="25" HorizontalContentAlignment="Right"/>
@@ -48,7 +52,11 @@
         <Label x:Name="labDesc" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,333,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
         <Label x:Name="labSubj" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,388,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
         <Image x:Name="bookImg" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="136" Margin="478,238,0,0"/>
-        <Button x:Name="pagImgL" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="478,393,0,0" Height="25" Background="White"/>
-        <Button x:Name="pagImgR" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="549,393,0,0" Height="25" Background="White" RenderTransformOrigin="0.52,0.48"/>
+        <Button x:Name="pagImgL" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="478,393,0,0" Height="25" Background="White">
+        <Image Source="left.png"/>
+        </Button>
+        <Button x:Name="pagImgR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="549,393,0,0" Height="25" Background="White" RenderTransformOrigin="0.52,0.48">
+            <Image Source="right.png"/>
+        </Button>
         </Grid>
 </Window>
