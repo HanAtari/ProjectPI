@@ -9,48 +9,46 @@
     <Grid Width="640" Height="465">
         <Menu HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="640" Background="White" BorderBrush="Black">
             <MenuItem Header="File" Height="25">
-                <MenuItem Header="Login"></MenuItem>
-                <MenuItem Header="Logout"></MenuItem>
-                <MenuItem Header="Close"></MenuItem>
+                <MenuItem x:Name="login" Header="Login"></MenuItem>
+                <MenuItem x:Name="logout" Header="Logout"></MenuItem>
+                <MenuItem x:Name="close" Header="Close"></MenuItem>
             </MenuItem>
             <MenuItem Header="Library" Height="25">
-                <MenuItem Header="Manage Customers"></MenuItem>
-                <MenuItem Header="Circulation"></MenuItem>
-                <MenuItem Header="Reports"></MenuItem>
+                <MenuItem x:Name="custom" Header="Manage Customers"></MenuItem>
+                <MenuItem x:Name="circ" Header="Circulation"></MenuItem>
+                <MenuItem x:Name="rep" Header="Reports"></MenuItem>
             </MenuItem>
         </Menu>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="405" Stroke="Black" VerticalAlignment="Top" Width="200" Margin="0,25,0,0"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="195" Stroke="Black" VerticalAlignment="Top" Width="430" Margin="200,25,0,0"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="210" Stroke="Black" VerticalAlignment="Top" Width="430" Margin="200,220,0,0"/>
-        <TextBox Text="1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Margin="276,190,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,200,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,238,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="labPag" Text="1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Margin="276,190,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="tbAuth" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,200,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tbSubj" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,238,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,164,0,0" Height="25"/>
         <Label Content="Author" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,200,0,0" Height="25"/>
         <Label Content="Subject" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,238,0,0" Height="25"/>
-        <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="59,277,0,0" Height="25" Background="White"/>
-        <DataGrid HorizontalAlignment="Left" Margin="200,25,0,0" Height="159" VerticalAlignment="Top" Width="430"/>
-        <Grid HorizontalAlignment="Left" Height="159" VerticalAlignment="Top" Width="430" Margin="200,25,0,0">
+        <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="59,277,0,0" Height="25" Background="White"/>
 
-        </Grid>
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Margin="200,25,0,0" Height="159" VerticalAlignment="Top" Width="430"/>
+        
         <Label Content="Page" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205,190,0,0" RenderTransformOrigin="1,0.667" Height="31"/>
         <Image Source="Logo.jpg" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="200" Margin="10,59,0,0"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Margin="246,190,0,0" Height="25" Background="White"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Margin="314,190,0,0" Height="25" Background="White"/>
-        <Label Content="of 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="344,189,0,0" RenderTransformOrigin="1,0.667" Height="31"/>
-        <TextBox HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,164,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="0 Books found" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="528,190,0,0" RenderTransformOrigin="1,0.667" Height="25" HorizontalContentAlignment="Right"/>
-        <Label Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,229,0,0" RenderTransformOrigin="1,0.667" Height="26" FontSize="16"/>
-        <Label Content="Subtitle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,244,0,0" RenderTransformOrigin="1,0.667" Height="25" FontSize="14"/>
-        <Label Content="by Author" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,269,0,0" RenderTransformOrigin="1,0.667" Height="28" FontSize="14"/>
-        <Label Content="first published:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,285,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
+        <Button x:Name="pagGrL" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Margin="246,190,0,0" Height="25" Background="White"/>
+        <Button x:Name="pagGrR" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Margin="314,190,0,0" Height="25" Background="White"/>
+        <Label x:Name="pagCount" Content="of 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="344,189,0,0" RenderTransformOrigin="1,0.667" Height="31"/>
+        <TextBox x:Name="tbTitle" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Margin="59,164,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="labBookCount" Content="0 Books found" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="528,190,0,0" RenderTransformOrigin="1,0.667" Height="25" HorizontalContentAlignment="Right"/>
+        <Label x:Name="labTitle" Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,229,0,0" RenderTransformOrigin="1,0.667" Height="26" FontSize="16"/>
+        <Label x:Name="labSubTitle"  Content="Subtitle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,244,0,0" RenderTransformOrigin="1,0.667" Height="25" FontSize="14"/>
+        <Label x:Name="labAuth" Content="by Author"  Foreground="blue"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,269,0,0" RenderTransformOrigin="1,0.667" Height="28" FontSize="14"/>
+        <Label x:Name="labFP"  Content="first published:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,285,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
         <Label Content="Description" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,313,0,0" RenderTransformOrigin="1,0.667" Height="25" FontWeight="Bold"/>
         <Label Content="Subjects" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,363,0,0" RenderTransformOrigin="1,0.667" Height="25" FontWeight="Bold"/>
-        <Image HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="136" Margin="478,238,0,0"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="478,393,0,0" Height="25" Background="White"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="549,393,0,0" Height="25" Background="White" RenderTransformOrigin="0.52,0.48"/>
-        
-
-
-    </Grid>
+        <Label x:Name="labDesc" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,333,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
+        <Label x:Name="labSubj" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,388,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
+        <Image x:Name="bookImg" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="136" Margin="478,238,0,0"/>
+        <Button x:Name="pagImgL" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="478,393,0,0" Height="25" Background="White"/>
+        <Button x:Name="pagImgR" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="549,393,0,0" Height="25" Background="White" RenderTransformOrigin="0.52,0.48"/>
+        </Grid>
 </Window>
