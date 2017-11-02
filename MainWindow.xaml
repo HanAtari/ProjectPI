@@ -45,7 +45,8 @@
         <Label x:Name="labBookCount" Content="0 Books found" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="528,190,0,0" RenderTransformOrigin="1,0.667" Height="25" HorizontalContentAlignment="Right"/>
         <Label x:Name="labTitle" Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,229,0,0" RenderTransformOrigin="1,0.667" Height="26" FontSize="16"/>
         <Label x:Name="labSubTitle"  Content="Subtitle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,244,0,0" RenderTransformOrigin="1,0.667" Height="25" FontSize="14"/>
-        <Label x:Name="labAuth" Content="by Author"  Foreground="blue"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,269,0,0" RenderTransformOrigin="1,0.667" Height="28" FontSize="14"/>
+        <Label x:Name="labAuth"   Content="by Author"  Foreground="blue"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,269,0,0" RenderTransformOrigin="1,0.667" Height="28" FontSize="14" MouseUp="labAuth_MouseUp"/>
+        <Label x:Name="idAuth" Visibility="Hidden" Content="5" /> 
         <Label x:Name="labFP"  Content="first published:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,285,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
         <Label Content="Description" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,313,0,0" RenderTransformOrigin="1,0.667" Height="25" FontWeight="Bold"/>
         <Label Content="Subjects" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,363,0,0" RenderTransformOrigin="1,0.667" Height="25" FontWeight="Bold"/>

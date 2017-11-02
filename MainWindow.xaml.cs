@@ -25,5 +25,14 @@ namespace ProjectPI
             InitializeComponent();
             grid.DataContext = DBProxy.tableBook();
         }
+
+        private void labAuth_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            string id = idAuth.Content.ToString();
+
+            BookAuthorsDetails BAD = new BookAuthorsDetails(id);
+            BAD.Show();
+
+        }
     }
 }
