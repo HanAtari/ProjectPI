@@ -25,5 +25,34 @@ namespace ProjectPI
             InitializeComponent();
             grid.DataContext = DBProxy.tableBook();
         }
+
+        private void login_Click(object sender, RoutedEventArgs e)
+        {
+            Login log = new Login();
+            log.Show();
+        }
+
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void custom_Click(object sender, RoutedEventArgs e)
+        {
+            Customers cust = new Customers();
+            cust.Show();
+        }
+
+        private void circ_Click(object sender, RoutedEventArgs e)
+        {
+            Circulation circ = new Circulation();
+            circ.Show();
+        }
+
+        private void rep_Click(object sender, RoutedEventArgs e)
+        {
+            Reports rep = new Reports();
+            rep.Show();
+        }
     }
 }
