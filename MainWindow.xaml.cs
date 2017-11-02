@@ -54,5 +54,10 @@ namespace ProjectPI
             Reports rep = new Reports();
             rep.Show();
         }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

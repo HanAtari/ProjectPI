@@ -28,7 +28,7 @@
         <Label Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,164,0,0" Height="25"/>
         <Label Content="Author" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,200,0,0" Height="25"/>
         <Label Content="Subject" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,238,0,0" Height="25"/>
-        <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="59,277,0,0" Height="25" Background="White"/>
+        <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="59,277,0,0" Height="25" Background="White" Click="Search_Click"/>
 
         <DataGrid x:Name="grid" HorizontalAlignment="Left" Margin="200,25,0,0" Height="159" VerticalAlignment="Top" Width="430" ItemsSource="{Binding}"/>
         
