@@ -47,10 +47,10 @@
         <Label x:Name="labSubTitle"  Content="Subtitle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,244,0,0" RenderTransformOrigin="1,0.667" Height="25" FontSize="14"/>
         <Label x:Name="labAuth" Content="by Author"  Foreground="blue"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,269,0,0" RenderTransformOrigin="1,0.667" Height="28" FontSize="14"/>
         <Label x:Name="labFP"  Content="first published:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,285,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
-        <Label Content="Description" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,313,0,0" RenderTransformOrigin="1,0.667" Height="25" FontWeight="Bold"/>
-        <Label Content="Subjects" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,363,0,0" RenderTransformOrigin="1,0.667" Height="25" FontWeight="Bold"/>
-        <Label x:Name="labDesc" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,333,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
-        <Label x:Name="labSubj" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,388,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
+        <Label Content="Description" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,316,0,0" RenderTransformOrigin="1,0.667" Height="25" FontWeight="Bold"/>
+        <Label Content="Subjects" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,359,0,0" RenderTransformOrigin="1,0.667" Height="25" FontWeight="Bold"/>
+        <Label x:Name="labDesc" Content="labDesc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,333,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
+        <Label x:Name="labSubj" Content="labSubj" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="218,376,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
         <Image x:Name="bookImg" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="136" Margin="478,238,0,0"/>
         <Button x:Name="pagImgL" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="478,393,0,0" Height="25" Background="White">
         <Image Source="left.png"/>

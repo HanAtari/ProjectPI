@@ -19,18 +19,23 @@
         <Button x:Name="Renew" Content="Renew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="497,266,0,0" Height="25" Background="White"/>
         <Label Content="Current Issues" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,104,0,0" RenderTransformOrigin="1,0.667" Height="36" FontSize="16" FontWeight="Bold"/>
         <Label Content="Issue / Return" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,10,0,0" RenderTransformOrigin="1,0.667" Height="36" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="tbID_Copy" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Margin="287,51,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="Custumer ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="261,74,0,0" Height="25" RenderTransformOrigin="0.51,0.556"/>
+        <TextBox x:Name="tbBID" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Margin="261,51,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="lCID" Content="Custumer ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="261,74,0,0" Height="25" RenderTransformOrigin="0.51,0.556"/>
         <Button x:Name="Issue" Content="Issue" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="497,51,0,0" Height="25" Background="White"/>
         <Grid>
-            <Rectangle Fill="White" HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Top" Width="200" Margin="0,0,0,0"/>
-            <Label Content="Custumer ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,140,0,0" Height="25"/>
-            <Button x:Name="Circulation1" Content="Circulation" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="60,200,0,0" Height="25" Background="White"/>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Top" Width="200"/>
+            <Label Content="Custumer ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,164,0,0" Height="25"/>
+            <Button x:Name="Circulation1" Content="Circulation" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="60,224,0,0" Height="25" Background="White"/>
 
             <Image Source="Logo.jpg" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="200" Margin="11,35,0,0"/>
-            <TextBox x:Name="tbID1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Margin="11,170,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="tbCID" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Margin="11,194,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             <Label Content="Book ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205,51,0,0" Height="25"/>
             <Button x:Name="Return" Content="Return" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="497,81,0,0" Height="25" Background="White"/>
+            <Label x:Name="lName" Content="Current Issues" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,273,0,0" RenderTransformOrigin="1,0.667" Height="36" FontSize="16" FontWeight="Bold"/>
+            <Label x:Name="lID" Content="Current Issues" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,294,0,0" RenderTransformOrigin="1,0.667" Height="36" FontSize="16"/>
+            <Label x:Name="l1" Content="Current Issues" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,335,0,0" RenderTransformOrigin="1,0.667" Height="36" FontSize="14"/>
+            <Label x:Name="l2" Content="Current Issues" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,352,0,0" RenderTransformOrigin="1,0.667" Height="36" FontSize="14"/>
+            <Button x:Name="Edit" Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" Margin="108,388,0,0" Height="25" Background="White"/>
 
         </Grid>
 
