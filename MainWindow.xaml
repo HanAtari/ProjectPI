@@ -30,7 +30,7 @@
         <Label Content="Subject" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,238,0,0" Height="25"/>
         <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="59,277,0,0" Height="25" Background="White"/>
 
-        <DataGrid x:Name="grid" HorizontalAlignment="Left" Margin="200,25,0,0" Height="159" VerticalAlignment="Top" Width="430"/>
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Margin="200,25,0,0" Height="159" VerticalAlignment="Top" Width="430" ItemsSource="{Binding}"/>
         
         <Label Content="Page" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205,190,0,0" RenderTransformOrigin="1,0.667" Height="31"/>
         <Image Source="Logo.jpg" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="200" Margin="10,59,0,0"/>
