@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище LibraryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Authors">
+          <Key>
+            <PropertyRef Name="Key_a" />
+          </Key>
+          <Property Name="Key_a" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Bio" Type="nvarchar(max)" />
+          <Property Name="BirthDay" Type="nvarchar" MaxLength="20" />
+          <Property Name="DeathDay" Type="nvarchar" MaxLength="20" />
+          <Property Name="Wikipedia" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Library.dbo.Autoriz" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Autoriz">
+          <Key>
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Library.dbo.BookAuthors" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="BookAuthors">
+          <Key>
+            <PropertyRef Name="BookKey" />
+            <PropertyRef Name="AuthorKey" />
+          </Key>
+          <Property Name="BookKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="AuthorKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Library.dbo.BookCovers" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="BookCovers">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CoverFile" />
+            <PropertyRef Name="BookKey" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CoverFile" Type="int" Nullable="false" />
+          <Property Name="BookKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Books">
+          <Key>
+            <PropertyRef Name="Key_B" />
+          </Key>
+          <Property Name="Key_B" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Subtitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="FirstPublishDate" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Library.dbo.BookSubjects" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="BookSubjects">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Subject" />
+            <PropertyRef Name="Book_key" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="Book_key" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Library.dbo.CustomerIssue" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="CustomerIssue">
+          <Key>
+            <PropertyRef Name="Cutomer_Id" />
+            <PropertyRef Name="Book_Id" />
+            <PropertyRef Name="DateOfIssue" />
+            <PropertyRef Name="ReturnUntil" />
+          </Key>
+          <Property Name="Cutomer_Id" Type="int" Nullable="false" />
+          <Property Name="Book_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="DateOfIssue" Type="datetime" Nullable="false" />
+          <Property Name="ReturnUntil" Type="datetime" Nullable="false" />
+          <Property Name="ReturnDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Klient_2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Adress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_BookAuthors_Authors">
+          <End Role="Authors" Type="Self.Authors" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BookAuthors" Type="Self.BookAuthors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authors">
+              <PropertyRef Name="Key_a" />
+            </Principal>
+            <Dependent Role="BookAuthors">
+              <PropertyRef Name="AuthorKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookAuthors_Books">
+          <End Role="Books" Type="Self.Books" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BookAuthors" Type="Self.BookAuthors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="Key_B" />
+            </Principal>
+            <Dependent Role="BookAuthors">
+              <PropertyRef Name="BookKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookCovers_Books">
+          <End Role="Books" Type="Self.Books" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BookCovers" Type="Self.BookCovers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="Key_B" />
+            </Principal>
+            <Dependent Role="BookCovers">
+              <PropertyRef Name="BookKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookSubjects_Books">
+          <End Role="Books" Type="Self.Books" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BookSubjects" Type="Self.BookSubjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="Key_B" />
+            </Principal>
+            <Dependent Role="BookSubjects">
+              <PropertyRef Name="Book_key" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerIssue_Books">
+          <End Role="Books" Type="Self.Books" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CustomerIssue" Type="Self.CustomerIssue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="Key_B" />
+            </Principal>
+            <Dependent Role="CustomerIssue">
+              <PropertyRef Name="Book_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerIssue_Klient_2">
+          <End Role="Klient_2" Type="Self.Klient_2" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CustomerIssue" Type="Self.CustomerIssue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klient_2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CustomerIssue">
+              <PropertyRef Name="Cutomer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище LibraryModelContainer">
+          <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Klient_2" EntityType="Self.Klient_2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Autoriz" EntityType="Self.Autoriz" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Autoriz].[Login] AS [Login], 
+    [Autoriz].[Password] AS [Password]
+    FROM [dbo].[Autoriz] AS [Autoriz]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BookAuthors" EntityType="Self.BookAuthors" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BookAuthors].[BookKey] AS [BookKey], 
+    [BookAuthors].[AuthorKey] AS [AuthorKey]
+    FROM [dbo].[BookAuthors] AS [BookAuthors]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BookCovers" EntityType="Self.BookCovers" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BookCovers].[Id] AS [Id], 
+    [BookCovers].[CoverFile] AS [CoverFile], 
+    [BookCovers].[BookKey] AS [BookKey]
+    FROM [dbo].[BookCovers] AS [BookCovers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BookSubjects" EntityType="Self.BookSubjects" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BookSubjects].[Id] AS [Id], 
+    [BookSubjects].[Subject] AS [Subject], 
+    [BookSubjects].[Book_key] AS [Book_key]
+    FROM [dbo].[BookSubjects] AS [BookSubjects]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CustomerIssue" EntityType="Self.CustomerIssue" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CustomerIssue].[Cutomer_Id] AS [Cutomer_Id], 
+    [CustomerIssue].[Book_Id] AS [Book_Id], 
+    [CustomerIssue].[DateOfIssue] AS [DateOfIssue], 
+    [CustomerIssue].[ReturnUntil] AS [ReturnUntil], 
+    [CustomerIssue].[ReturnDate] AS [ReturnDate]
+    FROM [dbo].[CustomerIssue] AS [CustomerIssue]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_BookAuthors_Authors" Association="Self.FK_BookAuthors_Authors">
+            <End Role="Authors" EntitySet="Authors" />
+            <End Role="BookAuthors" EntitySet="BookAuthors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookAuthors_Books" Association="Self.FK_BookAuthors_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="BookAuthors" EntitySet="BookAuthors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookCovers_Books" Association="Self.FK_BookCovers_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="BookCovers" EntitySet="BookCovers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookSubjects_Books" Association="Self.FK_BookSubjects_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="BookSubjects" EntitySet="BookSubjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerIssue_Books" Association="Self.FK_CustomerIssue_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="CustomerIssue" EntitySet="CustomerIssue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerIssue_Klient_2" Association="Self.FK_CustomerIssue_Klient_2">
+            <End Role="Klient_2" EntitySet="Klient_2" />
+            <End Role="CustomerIssue" EntitySet="CustomerIssue" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Authors">
+          <Key>
+            <PropertyRef Name="Key_a" />
+          </Key>
+          <Property Name="Key_a" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDay" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DeathDay" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Wikipedia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Books" Relationship="Self.BookAuthors" FromRole="Authors" ToRole="Books" />
+        </EntityType>
+        <EntityType Name="Books">
+          <Key>
+            <PropertyRef Name="Key_B" />
+          </Key>
+          <Property Name="Key_B" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Subtitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FirstPublishDate" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BookCovers" Relationship="Self.FK_BookCovers_Books" FromRole="Books" ToRole="BookCovers" />
+          <NavigationProperty Name="BookSubjects" Relationship="Self.FK_BookSubjects_Books" FromRole="Books" ToRole="BookSubjects" />
+          <NavigationProperty Name="CustomerIssue" Relationship="Self.FK_CustomerIssue_Books" FromRole="Books" ToRole="CustomerIssue" />
+          <NavigationProperty Name="Authors" Relationship="Self.BookAuthors" FromRole="Books" ToRole="Authors" />
+        </EntityType>
+        <EntityType Name="Klient_2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Zip" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CustomerIssue" Relationship="Self.FK_CustomerIssue_Klient_2" FromRole="Klient_2" ToRole="CustomerIssue" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Autoriz">
+          <Key>
+            <PropertyRef Name="Login" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookCovers">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="CoverFile" />
+            <PropertyRef Name="BookKey" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CoverFile" Type="Int32" Nullable="false" />
+          <Property Name="BookKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_BookCovers_Books" FromRole="BookCovers" ToRole="Books" />
+        </EntityType>
+        <EntityType Name="BookSubjects">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Subject" />
+            <PropertyRef Name="Book_key" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Subject" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Book_key" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_BookSubjects_Books" FromRole="BookSubjects" ToRole="Books" />
+        </EntityType>
+        <EntityType Name="CustomerIssue">
+          <Key>
+            <PropertyRef Name="Cutomer_Id" />
+            <PropertyRef Name="Book_Id" />
+            <PropertyRef Name="DateOfIssue" />
+            <PropertyRef Name="ReturnUntil" />
+          </Key>
+          <Property Name="Cutomer_Id" Type="Int32" Nullable="false" />
+          <Property Name="Book_Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfIssue" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReturnUntil" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_CustomerIssue_Books" FromRole="CustomerIssue" ToRole="Books" />
+          <NavigationProperty Name="Klient_2" Relationship="Self.FK_CustomerIssue_Klient_2" FromRole="CustomerIssue" ToRole="Klient_2" />
+        </EntityType>
+        <Association Name="FK_BookCovers_Books">
+          <End Role="Books" Type="Self.Books" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BookCovers" Type="Self.BookCovers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="Key_B" />
+            </Principal>
+            <Dependent Role="BookCovers">
+              <PropertyRef Name="BookKey" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BookSubjects_Books">
+          <End Role="Books" Type="Self.Books" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="BookSubjects" Type="Self.BookSubjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="Key_B" />
+            </Principal>
+            <Dependent Role="BookSubjects">
+              <PropertyRef Name="Book_key" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerIssue_Books">
+          <End Role="Books" Type="Self.Books" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CustomerIssue" Type="Self.CustomerIssue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="Key_B" />
+            </Principal>
+            <Dependent Role="CustomerIssue">
+              <PropertyRef Name="Book_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerIssue_Klient_2">
+          <End Role="Klient_2" Type="Self.Klient_2" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CustomerIssue" Type="Self.CustomerIssue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klient_2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CustomerIssue">
+              <PropertyRef Name="Cutomer_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BookAuthors">
+          <End Role="Authors" Type="Self.Authors" Multiplicity="*" />
+          <End Role="Books" Type="Self.Books" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="LibraryEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Authors" EntityType="Self.Authors" />
+          <EntitySet Name="Books" EntityType="Self.Books" />
+          <EntitySet Name="Klient_2" EntityType="Self.Klient_2" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Autoriz" EntityType="Self.Autoriz" />
+          <EntitySet Name="BookCovers" EntityType="Self.BookCovers" />
+          <EntitySet Name="BookSubjects" EntityType="Self.BookSubjects" />
+          <EntitySet Name="CustomerIssue" EntityType="Self.CustomerIssue" />
+          <AssociationSet Name="FK_BookCovers_Books" Association="Self.FK_BookCovers_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="BookCovers" EntitySet="BookCovers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BookSubjects_Books" Association="Self.FK_BookSubjects_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="BookSubjects" EntitySet="BookSubjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerIssue_Books" Association="Self.FK_CustomerIssue_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="CustomerIssue" EntitySet="CustomerIssue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerIssue_Klient_2" Association="Self.FK_CustomerIssue_Klient_2">
+            <End Role="Klient_2" EntitySet="Klient_2" />
+            <End Role="CustomerIssue" EntitySet="CustomerIssue" />
+          </AssociationSet>
+          <AssociationSet Name="BookAuthors" Association="Self.BookAuthors">
+            <End Role="Authors" EntitySet="Authors" />
+            <End Role="Books" EntitySet="Books" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище LibraryModelContainer" CdmEntityContainer="LibraryEntities1">
+          <EntitySetMapping Name="Authors">
+            <EntityTypeMapping TypeName="LibraryModel.Authors">
+              <MappingFragment StoreEntitySet="Authors">
+                <ScalarProperty Name="Key_a" ColumnName="Key_a" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+                <ScalarProperty Name="DeathDay" ColumnName="DeathDay" />
+                <ScalarProperty Name="Wikipedia" ColumnName="Wikipedia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Books">
+            <EntityTypeMapping TypeName="LibraryModel.Books">
+              <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="Key_B" ColumnName="Key_B" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+                <ScalarProperty Name="FirstPublishDate" ColumnName="FirstPublishDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Klient_2">
+            <EntityTypeMapping TypeName="LibraryModel.Klient_2">
+              <MappingFragment StoreEntitySet="Klient_2">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LibraryModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Autoriz">
+            <EntityTypeMapping TypeName="LibraryModel.Autoriz">
+              <MappingFragment StoreEntitySet="Autoriz">
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookCovers">
+            <EntityTypeMapping TypeName="LibraryModel.BookCovers">
+              <MappingFragment StoreEntitySet="BookCovers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CoverFile" ColumnName="CoverFile" />
+                <ScalarProperty Name="BookKey" ColumnName="BookKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookSubjects">
+            <EntityTypeMapping TypeName="LibraryModel.BookSubjects">
+              <MappingFragment StoreEntitySet="BookSubjects">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Book_key" ColumnName="Book_key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerIssue">
+            <EntityTypeMapping TypeName="LibraryModel.CustomerIssue">
+              <MappingFragment StoreEntitySet="CustomerIssue">
+                <ScalarProperty Name="Cutomer_Id" ColumnName="Cutomer_Id" />
+                <ScalarProperty Name="Book_Id" ColumnName="Book_Id" />
+                <ScalarProperty Name="DateOfIssue" ColumnName="DateOfIssue" />
+                <ScalarProperty Name="ReturnUntil" ColumnName="ReturnUntil" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="BookAuthors" TypeName="LibraryModel.BookAuthors" StoreEntitySet="BookAuthors">
+            <EndProperty Name="Authors">
+              <ScalarProperty Name="Key_a" ColumnName="AuthorKey" />
+            </EndProperty>
+            <EndProperty Name="Books">
+              <ScalarProperty Name="Key_B" ColumnName="BookKey" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

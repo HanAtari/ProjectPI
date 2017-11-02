@@ -23,6 +23,7 @@ namespace ProjectPI
         public MainWindow()
         {
             InitializeComponent();
+            grid.DataContext = DBProxy.tableBook();
         }
     }
 }

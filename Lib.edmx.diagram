@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cd756f305ae44452a4e17b252c94b3b1" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryModel.Authors" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Books" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Klient_2" Width="1.5" PointX="6" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Autoriz" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.BookCovers" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.BookSubjects" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.CustomerIssue" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="LibraryModel.FK_BookCovers_Books" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_BookSubjects_Books" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_CustomerIssue_Books" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_CustomerIssue_Klient_2" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.BookAuthors" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -34,8 +34,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,20 +66,60 @@
     <Compile Include="AddCustomer.xaml.cs">
       <DependentUpon>AddCustomer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Authors.cs">
+      <DependentUpon>Lib.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Autoriz.cs">
+      <DependentUpon>Lib.tt</DependentUpon>
+    </Compile>
     <Compile Include="BookAuthorsDetails.xaml.cs">
       <DependentUpon>BookAuthorsDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BookCovers.cs">
+      <DependentUpon>Lib.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Books.cs">
+      <DependentUpon>Lib.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookSubjects.cs">
+      <DependentUpon>Lib.tt</DependentUpon>
     </Compile>
     <Compile Include="Circulation.xaml.cs">
       <DependentUpon>Circulation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomerIssue.cs">
+      <DependentUpon>Lib.tt</DependentUpon>
+    </Compile>
     <Compile Include="Customers.xaml.cs">
       <DependentUpon>Customers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DBProxy.cs" />
+    <Compile Include="Klient_2.cs">
+      <DependentUpon>Lib.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lib.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lib.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lib.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lib.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lib.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lib.edmx</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReportsWindow.xaml.cs">
       <DependentUpon>ReportsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Lib.tt</DependentUpon>
     </Compile>
     <Page Include="AddCustomer.xaml">
       <SubType>Designer</SubType>
@@ -127,6 +176,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Lib.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Lib.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Lib.edmx.diagram">
+      <DependentUpon>Lib.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -143,6 +200,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Lib.edmx</DependentUpon>
+      <LastGenOutput>Lib.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Lib.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Lib.edmx</DependentUpon>
+      <LastGenOutput>Lib.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
