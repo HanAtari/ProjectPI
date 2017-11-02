@@ -7,21 +7,21 @@
         mc:Ignorable="d"
         Title="Add / Edit Customers" Height="283.582" Width="482.089">
     <Grid>
-        <TextBox x:Name="tbNameID" HorizontalAlignment="Left" Height="23" Margin="81,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="81,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="25,36,0,0" VerticalAlignment="Top" Width="32"/>
-        <TextBox x:Name="tbName" HorizontalAlignment="Left" Height="23" Margin="81,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="81,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="25,90,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbAdress" HorizontalAlignment="Left" Height="23" Margin="81,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="81,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Adress" HorizontalAlignment="Left" Margin="25,121,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbZip" HorizontalAlignment="Left" Height="23" Margin="81,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="81,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36"/>
         <Label Content="Zip/City" HorizontalAlignment="Left" Margin="25,152,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbCity" HorizontalAlignment="Left" Height="23" Margin="122,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79"/>
-        <TextBox x:Name="tbPhone" HorizontalAlignment="Left" Height="23" Margin="293,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="122,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="293,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"/>
         <Label Content="Phone" HorizontalAlignment="Left" Margin="237,90,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbMail" HorizontalAlignment="Left" Height="23" Margin="293,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="293,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="237,121,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="butSave" Content="Save" HorizontalAlignment="Left" Margin="293,205,0,0" VerticalAlignment="Top" Width="59"/>
-        <Button x:Name="butCancel" Content="Cancel" HorizontalAlignment="Left" Margin="370,205,0,0" VerticalAlignment="Top" Width="59"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="293,205,0,0" VerticalAlignment="Top" Width="59"/>
+        <Button Content="Cancle" HorizontalAlignment="Left" Margin="370,205,0,0" VerticalAlignment="Top" Width="59"/>
 
     </Grid>
 </Window>

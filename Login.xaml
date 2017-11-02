@@ -6,13 +6,10 @@
         xmlns:local="clr-namespace:ProjectPI"
         mc:Ignorable="d"
         Title="Login" Height="221.641" Width="426.492">
-
     <Grid Margin="0,0,2,1">
-        <TextBox x:Name="tUsername" HorizontalAlignment="Left" Height="23" Margin="121,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
-        <TextBox x:Name="tPassword" HorizontalAlignment="Left" Height="23" Margin="121,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="121,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="121,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
         <Label Content="Username" HorizontalAlignment="Left" Margin="26,49,0,0" VerticalAlignment="Top"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="26,107,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="bLogin" Content="Login" HorizontalAlignment="Left" Margin="121,146,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="bCancel" Content="Cancel" HorizontalAlignment="Left" Margin="256,146,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
