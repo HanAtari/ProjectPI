@@ -7,12 +7,32 @@
         mc:Ignorable="d"
         Title="Bookmaster3000™ - Circulation"  Height="465" Width="640" FontFamily="Tahoma" BorderThickness="0,0,0,0">
     <Grid>
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="405" Stroke="Black" VerticalAlignment="Top" Width="200" Margin="0,0,0,0"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Top" Width="200" Margin="0,0,0,0"/>
         <Label Content="Custumer ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,140,0,0" Height="25"/>
         <Button x:Name="Circulation" Content="Circulation" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="60,200,0,0" Height="25" Background="White"/>
 
         <Image Source="Logo.jpg" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="200" Margin="11,35,0,0"/>
-        <TextBox x:Name="tbTitle" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Margin="11,170,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tbID" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Margin="11,170,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <DataGrid x:Name="grid1" HorizontalAlignment="Left" Margin="200,140,0,0" Height="114" VerticalAlignment="Top" Width="430"/>
+        <DataGrid x:Name="grid2" HorizontalAlignment="Left" Margin="200,320,0,0" Height="114" VerticalAlignment="Top" Width="430"/>
+        <Label Content="History" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,284,0,0" RenderTransformOrigin="1,0.667" Height="36" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="Renew" Content="Renew" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="497,266,0,0" Height="25" Background="White"/>
+        <Label Content="Current Issues" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,104,0,0" RenderTransformOrigin="1,0.667" Height="36" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Issue / Return" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,10,0,0" RenderTransformOrigin="1,0.667" Height="36" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="tbID_Copy" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Margin="287,51,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Custumer ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="261,74,0,0" Height="25" RenderTransformOrigin="0.51,0.556"/>
+        <Button x:Name="Issue" Content="Issue" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="497,51,0,0" Height="25" Background="White"/>
+        <Grid>
+            <Rectangle Fill="White" HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Top" Width="200" Margin="0,0,0,0"/>
+            <Label Content="Custumer ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,140,0,0" Height="25"/>
+            <Button x:Name="Circulation1" Content="Circulation" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="60,200,0,0" Height="25" Background="White"/>
+
+            <Image Source="Logo.jpg" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="200" Margin="11,35,0,0"/>
+            <TextBox x:Name="tbID1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Margin="11,170,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="Book ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205,51,0,0" Height="25"/>
+            <Button x:Name="Return" Content="Return" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="497,81,0,0" Height="25" Background="White"/>
+
+        </Grid>
 
     </Grid>
 </Window>
