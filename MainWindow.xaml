@@ -9,14 +9,14 @@
     <Grid Width="640" Height="465">
         <Menu HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="640" Background="White" BorderBrush="Black">
             <MenuItem Header="File" Height="25">
-                <MenuItem x:Name="login" Header="Login"></MenuItem>
+                <MenuItem x:Name="login" Header="Login" Click="login_Click"></MenuItem>
                 <MenuItem x:Name="logout" Header="Logout"></MenuItem>
-                <MenuItem x:Name="close" Header="Close"></MenuItem>
+                <MenuItem x:Name="close" Header="Close" Click="close_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Library" Height="25">
-                <MenuItem x:Name="custom" Header="Manage Customers"></MenuItem>
-                <MenuItem x:Name="circ" Header="Circulation"></MenuItem>
-                <MenuItem x:Name="rep" Header="Reports"></MenuItem>
+                <MenuItem x:Name="custom" Header="Manage Customers" Click="custom_Click"></MenuItem>
+                <MenuItem x:Name="circ" Header="Circulation" Click="circ_Click"></MenuItem>
+                <MenuItem x:Name="rep" Header="Reports" Click="rep_Click"></MenuItem>
             </MenuItem>
         </Menu>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="405" Stroke="Black" VerticalAlignment="Top" Width="200" Margin="0,25,0,0"/>
@@ -28,7 +28,7 @@
         <Label Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,164,0,0" Height="25"/>
         <Label Content="Author" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,200,0,0" Height="25"/>
         <Label Content="Subject" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,238,0,0" Height="25"/>
-        <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="59,277,0,0" Height="25" Background="White"/>
+        <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="59,277,0,0" Height="25" Background="White" Click="Search_Click"/>
 
         <DataGrid x:Name="grid" HorizontalAlignment="Left" Margin="200,25,0,0" Height="159" VerticalAlignment="Top" Width="430" ItemsSource="{Binding}"/>
         
