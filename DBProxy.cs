@@ -14,66 +14,27 @@ namespace ProjectPI
     {
 
         static LibraryEntities1 context = new LibraryEntities1();
-        public static string retTitle(string id)//Название книги по айди
+        public static List<string> retBookInfo(string id)//Все атрибуты книги кроме обложек(0-название,1- субтитл, 2=Дата, 3-описание,4-авторы,5 - метки)
         {
-            var books = context.Books.ToList();
-            foreach (var b in books)
-            {
-                if (b.Key_B == id)
-                {
-                    try
-                    {
-                        return b.Title;
-                    }
-                    catch
-                    {
-                        return "";
-                    }
-                }
-            }
-            return "";
-        }
+            List<string> l = new List<string>();
+            var b = context.Books.Where(c => c.Key_B == id).FirstOrDefault();
 
-        public static string retSubTitle(string id)//Сабтитлы книги по айди
-        {
-            var books = context.Books.ToList();
-            foreach (var b in books)
+
+            l.Add(b.Title);
+
+            l.Add(b.Subtitle);
+
+            l.Add(b.FirstPublishDate);
+
+            l.Add(b.Description);
+
+            string aut = "";
+            foreach (var a in b.Authors)
             {
-                if (b.Key_B == id)
-                {
-                    try
-                    {
-                        return b.Subtitle;
-                    }
-                    catch
-                    {
-                        return "";
-                    }
-                }
+                aut += a.Name + ", ";
             }
-            return "";
-        }
-        public static string retDescription(string id)//Описание книги по айди
-        {
-            var books = context.Books.ToList();
-            foreach (var b in books)
-            {
-                if (b.Key_B == id)
-                {
-                    try
-                    {
-                        return b.Description;
-                    }
-                    catch
-                    {
-                        return "";
-                    }
-                }
-            }
-            return "";
-        }
-        public static string retSubject(string id)//метки книги через запятую через айди
-        {
+            l.Add(aut);
+
             string str = "";
             var subject = context.BookSubjects.ToList();
             foreach (var s in subject)
@@ -83,8 +44,11 @@ namespace ProjectPI
                     str += s.Subject + ", ";
                 }
             }
-            return str.Substring(0, str.Length - 2);
+            l.Add(str);
+
+            return l;
         }
+
         public static List<string> retCover(string id)//Обложки книги по айди
         {
             List<string> str = new List<string>();
@@ -98,91 +62,51 @@ namespace ProjectPI
             }
             return str;
         }
-        public static string retBio(string id)//Биография автора по айди автора
+        public static List<string> retBio(string id)//Атрибуты автора (0-имя, 1-биография, 2-дата рождения, 3 дата смерти, 4-вики)
         {
             List<string> str = new List<string>();
-            var aut = context.Authors.ToList();
-            foreach (var a in aut)
+            var aut = context.Authors.Where(c => c.Key_a == id).FirstOrDefault();
+
+            str.Add(aut.Name);
+            if (aut.Bio != null)
             {
-                if (a.Key_a == id)
-                {
-                    try
-                    {
-                        return a.Bio;
-                    }
-                    catch
-                    {
-                        return "";
-                    }
-                }
+                str.Add(aut.Bio);
+            }
+            else
+            {
+                str.Add("");
             }
 
-            return "";
-        }
-
-        public static string retBirthday(string id)//Дата рождения автора по айди
-        {
-            List<string> str = new List<string>();
-            var aut = context.Authors.ToList();
-            foreach (var a in aut)
+            if (aut.BirthDay != null)
             {
-                if (a.Key_a == id)
-                {
-                    try
-                    {
-                        return a.BirthDay;
-                    }
-                    catch
-                    {
-                        return "";
-                    }
-                }
+                str.Add(aut.BirthDay);
+            }
+            else
+            {
+                str.Add("");
             }
 
-            return "";
-        }
-
-        public static string retDeathday(string id)//Дата смерти автора по айди
-        {
-            List<string> str = new List<string>();
-            var aut = context.Authors.ToList();
-            foreach (var a in aut)
+            if (aut.DeathDay != null)
             {
-                if (a.Key_a == id)
-                {
-                    try
-                    {
-                        return a.DeathDay;
-                    }
-                    catch
-                    {
-                        return "";
-                    }
-                }
+                str.Add(aut.DeathDay);
+            }
+            else
+            {
+                str.Add("");
             }
 
-            return "";
-        }
-        public static string retWiki(string id)//страница википедии автора по айди
-        {
-            List<string> str = new List<string>();
-            var aut = context.Authors.ToList();
-            foreach (var a in aut)
+            if (aut.Wikipedia != null)
             {
-                if (a.Key_a == id)
-                {
-                    try
-                    {
-                        return a.Wikipedia;
-                    }
-                    catch
-                    {
-                        return "";
-                    }
-                }
+                str.Add(aut.Wikipedia);
+            }
+            else
+            {
+                str.Add("");
             }
 
-            return "";
+
+
+            return str;
         }
 
         public static string retHashPass(string login)//Возвращает хешированный пароль
@@ -198,6 +122,32 @@ namespace ProjectPI
             }
 
             return "";
+        }
+
+        public static DataTable comboboxauthor()// комбобокс с авторами
+        {
+            var cust = context.Authors.ToList();
+            DataTable dt = new DataTable("Client");
+            DataColumn column;
+            DataRow row;
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "ID";
+            column.ReadOnly = false;
+            dt.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Name";
+            column.ReadOnly = false;
+            dt.Columns.Add(column);
+            foreach (var a in cust)
+            {
+                row = dt.NewRow();
+                row[0] = a.Key_a;
+                row[1] = a.Name;
+                dt.Rows.Add(row);
+            }
+            return dt;
         }
         public static DataTable tableClients()//Таблица со списком клиентов
         {
@@ -391,6 +341,11 @@ namespace ProjectPI
             column.ColumnName = "Author";
             column.ReadOnly = false;
             dt.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Subject";
+            column.ReadOnly = false;
+            dt.Columns.Add(column);
 
             foreach (var b in books)
             {
@@ -400,9 +355,9 @@ namespace ProjectPI
                 var aut = b.Authors.ToList();
                 foreach (var a in aut)
                 {
-                    row[2] += a.Name + ", ";
+                    row[2] += a.Name + " ";
                 }
-
+                row[3] = b.BookSubjects.Where(c => c.Book_key == b.Key_B).FirstOrDefault().Subject;
                 dt.Rows.Add(row);
             }
             return dt;

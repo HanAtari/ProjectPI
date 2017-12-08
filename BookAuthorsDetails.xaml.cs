@@ -20,7 +20,6 @@ namespace ProjectPI
     public partial class BookAuthorsDetails : Window
     {
         private string id;
-        private DBProxy info;
         private string link_wiki;
 
         public BookAuthorsDetails(string id)
@@ -42,18 +41,18 @@ namespace ProjectPI
         private bool fill(string id) {
 
             bool result = false;
-
-            string name = DBProxy.retNameAut(id).ToString(); //какой то метод который возвращает имя автора. сейчас его нет
+            List<string> str = DBProxy.retBio(id);
+            string name = str[0]; //какой то метод который возвращает имя автора. сейчас его нет
 
             cbAuth.SelectedValue = name;
 
-            labDoB.Content = DBProxy.retBirthday(id).ToString(); // в каком формате хз естественно
+            labDoB.Content = str[1]; // в каком формате хз естественно
 
-            labDeath.Content = DBProxy.retDeathday(id).ToString(); // в каком формате хз естественно
+            labDeath.Content = str[2]; // в каком формате хз естественно
 
-            labBio.Content = DBProxy.retBio(id).ToString();
+            labBio.Content = str[3];
 
-            this.link_wiki = DBProxy.retWiki(id).ToString();
+            this.link_wiki = str[4];
 
             if (name != "")
             {
@@ -67,6 +66,11 @@ namespace ProjectPI
         {
             //при клике по лейблу хоп и открывается браузер
             System.Diagnostics.Process.Start(link_wiki);
+        }
+
+        private void cbAuth_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

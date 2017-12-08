@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:ProjectPI"
         mc:Ignorable="d"
         Title="Author of " Height="300" Width="300" FontFamily="Tahoma" Loaded="Window_Loaded">
-    <Grid ContextMenuOpening="Grid_ContextMenuOpening">
-        <ComboBox x:Name="cbAuth" HorizontalAlignment="Left" VerticalAlignment="Top" Width="272" Margin="10,10,0,0" Height="26" SelectionChanged="ComboBox_SelectionChanged" Background="White"/>
+    <Grid>
+        <ComboBox x:Name="cbAuth" HorizontalAlignment="Left" VerticalAlignment="Top" Width="272" Margin="10,10,0,0" Height="26" SelectionChanged="cbAuth_SelectionChanged" Background="White"/>
         <Label x:Name="labDoB"  Content="31 илюля 1982" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
         <Label x:Name="t"  Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,41,0,0" RenderTransformOrigin="1,0.667" Height="25"/>
 

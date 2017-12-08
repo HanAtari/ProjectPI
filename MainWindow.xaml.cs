@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
+using System.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -20,20 +20,21 @@ namespace ProjectPI
     /// </summary>
     public partial class MainWindow : Window
     {
+        DataView MyDataView;
         public MainWindow()
         {
             InitializeComponent();
             grid.DataContext = DBProxy.tableBook();
         }
 
-<<<<<<< HEAD
         private void labAuth_MouseUp(object sender, MouseButtonEventArgs e)
         {
             string id = idAuth.Content.ToString();
 
             BookAuthorsDetails BAD = new BookAuthorsDetails(id);
             BAD.Show();
-=======
+        }
+
         private void login_Click(object sender, RoutedEventArgs e)
         {
             Login log = new Login();
@@ -65,8 +66,31 @@ namespace ProjectPI
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
->>>>>>> 7ed1d8835c6acc773bf9c1783bce8bbb8425de76
+            System.Data.DataTable dt = DBProxy.tableBook();
+            MyDataView = new DataView(dt);
+            MyDataView.RowFilter = $"([Title] LIKE ('*{tbTitle.Text}*')) and ([Author] LIKE ('*{tbAuth.Text}*')) and ([Subject] LIKE ('*{tbSubj.Text}*'))";
+            grid.DataContext = MyDataView;
+            grid.Columns[3].Visibility = Visibility.Hidden;
+            labBookCount.Content = grid.Items.Count.ToString() + " Books found";
+        }
 
+        private void grid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            DataRowView drv = grid.SelectedItems[0] as DataRowView;
+            List<string> str = DBProxy.retBookInfo(drv[0].ToString());
+            labTitle.Content = str[0];
+            labSubTitle.Content = str[1];
+            labAuth.Content = str[4];
+            labFP.Content = "first published: " + str[2];
+            labDesc.Content = str[3];
+            labSubj.Content = str[5];
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            grid.Columns[3].Visibility = Visibility.Hidden;
+            grid.IsReadOnly = true;
+            labBookCount.Content = grid.Items.Count.ToString() + " Books found";
         }
     }
 }

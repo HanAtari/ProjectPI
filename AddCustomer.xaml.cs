@@ -57,11 +57,8 @@ namespace ProjectPI
 
             if (name != "" && address != "" && phone != "" && email != "" && zip != "" && city != "")
             {
-
                 if (this.status == "edit") {
-
                     DBProxy.upClient(this.id, name, phone, address, email, zip, city);
-
                 }
                 if (this.status == "add") {
 
@@ -70,7 +67,6 @@ namespace ProjectPI
                     DBProxy.addClient(name, phone, address, email, zip, city);
 
                 }
-                
             }
             else
             {

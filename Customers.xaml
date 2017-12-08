@@ -7,14 +7,13 @@
         mc:Ignorable="d"
         Title="Customers" Height="449.253" Width="720.896">
     <Grid Margin="0,0,2,0">
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="25,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="customerId" HorizontalAlignment="Left" Height="23" Margin="25,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Customer ID" HorizontalAlignment="Left" Margin="25,36,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="25,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="nameClient" HorizontalAlignment="Left" Height="23" Margin="25,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="25,106,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Search" HorizontalAlignment="Left" Margin="25,168,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Edit..." HorizontalAlignment="Left" Margin="25,368,0,0" VerticalAlignment="Top" Width="41"/>
-        <Button Content="Add..." HorizontalAlignment="Left" Margin="104,368,0,0" VerticalAlignment="Top" Width="41" RenderTransformOrigin="-0.377,-0.12"/>
-        <DataGrid HorizontalAlignment="Left" Margin="169,36,0,0" VerticalAlignment="Top" Height="352" Width="507"/>
-
+        <Button Content="Search" HorizontalAlignment="Left" Margin="25,168,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click"/>
+        <Button Content="Edit..." HorizontalAlignment="Left" Margin="25,368,0,0" VerticalAlignment="Top" Width="41" Click="Button_Click_2"/>
+        <Button Content="Add..." HorizontalAlignment="Left" Margin="104,368,0,0" VerticalAlignment="Top" Width="41" RenderTransformOrigin="-0.377,-0.12" Click="Button_Click_1"/>
+        <DataGrid x:Name="grid1" HorizontalAlignment="Left" Margin="169,36,0,0" VerticalAlignment="Top" Height="352" Width="507" SelectionChanged="grid1_SelectionChanged" ItemsSource="{Binding}"/>
     </Grid>
 </Window>
